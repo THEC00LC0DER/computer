@@ -1,0 +1,88 @@
+/*
+    A mobile phone has a touchscreen. The screen is represented by a grid, divided into 800 rows
+and 1280 columns.
+The grid is represented by a 2D array Screen of type INTEGER. An array element will be set to 0
+unless the user touches that part of the screen.
+Many array elements are set to 1 by a single touch of a finger or a stylus.
+The following diagram shows a simplified touchscreen. The dark line represents a touch to the
+screen. All grid elements that are wholly or partly inside the outline will be set to 1. These elements
+are shaded.
+The element shaded in black represents the centre point.
+A program is needed to find the coordinates (the row and column) of the centre point. The centre
+point on the diagram above is row 6, column 11.
+Assume:
+• the user may only touch one area at a time
+• screen rotation does not affect the touchscreen.
+The programmer has started to define program modules as follows:
+SetRow()
+(generates test
+data)
+• Called with three parameters of type INTEGER:
+◦ a row number
+◦ the number of pixels to be skipped starting from column 1
+◦ the number of pixels that should be set to 1
+• Sets the required number of pixels to 1
+*/
+PROCEDURE SetRow(RowNumber, PixelsToBeSkipped, NumberOfPixels:INTEGER)
+    DECLARE Counter, StartPosition, EndPosition:INTEGER
+    StartPosition ← PixelsToBeSkipped +1
+    EndPosition ← PixelsToBeSkipped + NumberOfPixels
+    FOR Counter ← StartPosition TO EndPosition
+        Screen[RowNumber,Counter] ← 1
+    NEXT Counter
+ENDPROCEDURE
+
+FUNCTION SearchInRow(RowNumber,StartColoumn:INTEGER) RETURNS INTEGER
+    DECLARE Counter, ColoumnNumber, Step: INTEGER
+    DECLARE Found: BOOLEAN
+    ColoumnNumber ← -1
+    Found ← FALSE
+    IF StartColoumn = 1 THEN
+        SET Step TO 1
+    ELSE  
+        SET Step TO -1
+    ENDIF
+    FOR Counter ← StartColoumn TO 1280 STEP Step
+        IF Screen[RowNumber, Counter] = 1 AND Found = FALSE THEN
+            SET ColoumnNumber TO Counter
+            SET Found TO TRUE
+        ENDIF
+    NEXT Counter
+    RETURN ColoumnNumber
+ENDFUNCTION
+
+
+FUNCTION GetCentreCol(RowNumber : INTEGER) RETURNS INTEGER
+    DECLARE CentreCol, StartColoumn, EndColoumn : INTEGER
+    CentreCol ← -1
+    StartColoumn ← SearchInRow(RowNumber,1)
+    EndColoumn ← SearchInRow(RowNumber,1280)
+    IF StartColoumn <> -1 AND EndColoumn <> -1 
+        THEN    
+            CentreCol = INT((EndColoumn + StartColoumn) / 2)
+    ENDIF
+    RETURN CentreCol
+ENDFUNCTION
+
+FUNCTION FirstRowSet() RETURNS INTEGER
+    DECLARE RowCounter, ColoumnCounter, RowNumber: INTEGER
+    RowCounter ← 1
+    RowNumber ← -1
+    WHILE RowCounter <=800 AND RowNumber = -1
+        ColoumnCounter ← 1
+        WHILE ColoumnCounter <=1280 AND RowNumber <> -1
+            IF Screen[RowCounter, ColoumnCounter] = 1
+                THEN
+                    RowNumber ← RowCounter
+            ENDIF
+            ColoumnCounter = ColoumnCounter +1
+        ENDWHILE
+        RowCounter ← RowCounter + 1
+    ENDWHILE
+    RETURN RowNumber
+ENDFUNCTION
+
+
+
+        
+        

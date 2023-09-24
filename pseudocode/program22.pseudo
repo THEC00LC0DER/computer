@@ -1,0 +1,17 @@
+FUNCTION FirstRowSet() RETURNS INTEGER
+    DECLARE RowCounter, ColoumnCounter, RowNumber: INTEGER
+    RowCounter ← 1
+    RowNumber ← -1
+    WHILE RowCounter <=800 AND RowNumber = -1
+        ColoumnCounter ← 1
+        WHILE ColoumnCounter <=1280 AND RowNumber <> -1
+            IF Screen[RowCounter, ColoumnCounter] = 1
+                THEN
+                    RowNumber ← RowCounter
+            ENDIF
+            ColoumnCounter = ColoumnCounter +1
+        ENDWHILE
+        RowCounter ← RowCounter + 1
+    ENDWHILE
+    RETURN RowNumber
+ENDFUNCTION

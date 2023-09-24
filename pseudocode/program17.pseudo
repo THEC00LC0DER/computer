@@ -1,0 +1,11 @@
+/*
+array : 
+    1D or 2D
+    syntax:*/
+//      DECLARE <Arrayname>: ARRAY[LB : UB] of <datatype>
+//eg:
+DECLARE Number:ARRAY[0:4] OF INTEGER
+//Taking inputs
+FOR Index ← 0 to 4
+    INPUT Number[Index]
+NEXT Index

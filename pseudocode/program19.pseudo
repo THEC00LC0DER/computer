@@ -1,0 +1,3 @@
+//Declare 2d array
+DECLARE <identifier>:ARRAY[<LBound1>:<UBound1>,<LBound2>:<UBound2>] OF <datatype>
+(3,1)

@@ -1,0 +1,11 @@
+/*
+    
+*/
+OPENFILE "student.txt" FOR READ
+DECLARE Name: STRING
+WHILE NOT EOF("student.txt")
+    READFILE "student.txt", Name
+    OUTPUT Name
+ENDWHILE
+CLOSEFILE "student.txt"
+

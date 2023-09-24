@@ -1,0 +1,12 @@
+Declaring procedures:
+    PROCEDURE NameOfProcedure
+        //Statements
+    ENDPROCEDURE
+
+    For calling:
+        CALL NameOfProcedure
+Declaring functions:
+    FUNCTION FnName
+        //Statements
+    ENDFUNCTION
+    

@@ -1,0 +1,12 @@
+INPUT Number1
+INPUT Number2
+INPUT Number3
+IF Number1 > Number2 AND Number1 > Number3
+    THEN
+        OUTPUT Number1 is greatest
+IF Number2 > Number3 AND Number2 > Number1
+    THEN
+        OUTPUT Number2 is greatest
+ELSE
+    OUTPUT Number3 is greatest
+

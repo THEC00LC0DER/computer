@@ -1,0 +1,5 @@
+OPENFILE "Name.txt" FOR WRITE
+WRITEFILE "Name.txt", "My name is Ram"
+CLOSEFILE "Name.txt"
+//This is a test program.
+//wow kya ladka hai very handsome boii

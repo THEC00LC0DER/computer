@@ -1,0 +1,19 @@
+Weighting ← 10
+Total ← 0
+Count ← 1
+REPEAT
+    Input Digit //1,2,3,4,5,6,7,8,9
+    Value ← Digit * Weighting
+    Total ← Total + Value
+    Weighting ← Weighting - 1
+    Count ← Count + 1
+UNTIL Count = 9
+Remainder ← Total MOD 11
+Checkdigit ← 11 - Remainder
+IF Checkdigit = 10
+        CheckDigit ← X
+        OUTPUT 1
+    ELSE    
+        OUTPUT 0
+ENDIF
+

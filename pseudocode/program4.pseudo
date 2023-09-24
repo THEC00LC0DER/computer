@@ -1,0 +1,13 @@
+set SecretNumber = Random
+INPUT Guess
+WHILE Guess <> SecretNumber DO 
+    set NumberOfGuesses = NumberOfGuesses + 1
+    IF Guess < SecretNumber
+        THEN
+            OUTPUT Enter greater number
+        ELSE
+            OUTPUT Enter smaller number
+    ENDIF
+    INPUT Guess
+ENDWHILE
+OUTPUT You have guessed the secret number. It took you NumberOfGuesses tries.

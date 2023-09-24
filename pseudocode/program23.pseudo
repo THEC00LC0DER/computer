@@ -1,0 +1,14 @@
+DECLARE MyNum: ARRAY[1 : 100] OF INTEGER
+DECLARE Counter, EndCounter : INTEGER
+DECLARE NoMoreSwaps : BOOLEAN
+EndCounter ← 99
+REPEAT
+    NoMoreSwaps ← TRUE
+    FOR Counter ← 1 TO EndCounter 
+        IF MyNum[Counter] > MyNum[Counter+1] THEN
+            SWAP MyNum[Counter], MyNum[Counter+1]
+            NoMoreSwaps ← FALSE
+        ENDIF
+    NEXT Counter
+    EndCounter ← EndCounter - 1
+UNTIL EndCounter >= 1 AND NoMoreSwaps = TRUE

@@ -1,0 +1,20 @@
+PROCEDURE Mix()
+    DECLARE ColumnCounter, RowCounter, total, NumberOfItems : INTEGER
+    FOR ColumnCounter ← 1 TO 128
+        total ← 0
+        NumberOfItems ← 0
+        Average ← 0
+        FOR RowCounter ← 1 TO 6
+            IF Sample[RowCounter, ColumnCounter] > 10
+                THEN
+                    total ← total + Sample[RowCounter, ColumnCounter]
+                    NumberOfItems ← NumberOfItems + 1
+            ENDIF
+        NEXT RowCounter
+        IF NumberOfItems > 0 
+            THEN
+                Average ← total / NumberOfItems
+        ENDIF
+        Result[ColumnCounter] ← Average
+    NEXT ColumnCounter
+ENDPROCEDURE

@@ -1,0 +1,19 @@
+FUNCTION Factorial(number:INTEGER) RETURNS INTEGER
+    DECLARE fact, Counter:INTEGER
+    fact ← 1
+    IF number > 0 
+        THEN
+        FOR Counter ← 1 TO number
+            fact = fact * number
+        NEXT Counter
+    ENDIF
+    IF number = 0
+        THEN
+            fact ← 1
+        ELSE
+            fact ← -1
+    ENDIF
+    RETURN fact
+ENDFUNCTION
+
+

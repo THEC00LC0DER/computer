@@ -1,0 +1,8 @@
+//Example of type declarations
+TYPE Employee
+    DECLARE Name: STRING
+    DECLARE EmpNumber: INTEGER
+    DECLARE Dapartment: STRING 
+    DECLARE DateOFBirth: DATE
+    DECLARE Attendance: REAL    
+ENDTYPE

@@ -1,0 +1,10 @@
+INPUT BiggestSoFar
+FOR Counter ← 2 TO 10
+    INPUT NextNumber
+    IF NextNumber > BiggestSoFar
+        THEN
+            BiggestSoFar ← NextNumber
+    ENDIF
+NEXT Counter
+OUTPUT BiggestSoFar
+

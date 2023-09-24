@@ -1,0 +1,13 @@
+FUNCTION factorial(number : INTEGER) RETURNS INTEGER
+    DECLARE fac, Counter : INTEGER
+    fac ← 1
+    IF number < 0 
+        THEN
+            fac ← -1
+        ELSE
+            FOR Counter ← 1 TO number
+                fac ← Counter * fac
+            NEXT Counter
+    ENDIF
+    RETURN fac
+ENDFUNCTION

@@ -1,0 +1,8 @@
+INPUT NumberOFRows
+INPUT NumberOFColoumns
+INPUT Symbol 
+For RowCounter ← 1 TO NumberOFRows
+    FOR ColoumnCounter ← 1 to NumberOFColoumns
+        OUTPUT Symbol
+    NEXT ColoumnCounter
+NEXT RowCounter

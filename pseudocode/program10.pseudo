@@ -1,0 +1,16 @@
+DECLARE number, counter, greatestnum, total, totalExcludingGreatest : INTEGER
+DECLARE average : REAL
+total ← 0
+totalExcludingGreatest ← 0
+FOR counter ← 1 TO 50
+    INPUT number
+    IF number > greatestnum
+        THEN
+            greatestnum ← number
+    ENDIF
+    total ← total + number 
+NEXT counter
+totalExcludingGreatest ← total - greatestnum
+average ← totalExcludingGreatest/49
+OUTPUT greatestnum
+OUTPUT average

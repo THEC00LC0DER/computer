@@ -1,0 +1,10 @@
+OPENFILE "Student.txt" FOR READ
+
+DECLARE Name: STRING, COunter: INTEGER
+
+FOR Counter ← 1 to 100
+    READFILE "Student.txt", Name
+    OUTPUT Name
+NEXT Counter
+
+CLOSEFILE

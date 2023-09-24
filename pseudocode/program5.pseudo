@@ -1,0 +1,8 @@
+set total = 0
+FOR Counter = 1 TO 10
+    INPUT number
+    set total = total + number
+NEXT counter
+set average = total/10
+OUTPUT "The total is "total
+OUTPUT "The average is "average

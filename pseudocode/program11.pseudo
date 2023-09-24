@@ -1,0 +1,15 @@
+//This program builds a pyramid using a symbol of users choice
+
+Input Symbol
+REPEAT
+    Input MaxNumberOFSymbols
+UNTIL MaxNumberOFSymbols MOD 2 = 1
+//forcing odd input
+NumberOfSpaces ← (MaxNumberOFSymbols-1)/2
+Counter ← NumberOfSpaces+1
+FOR Counter ← 1 TO Counter
+    
+NEXT Counter
+
+
+

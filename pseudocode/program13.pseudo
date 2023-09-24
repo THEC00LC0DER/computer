@@ -1,0 +1,10 @@
+DECLARE Counter, LoopCounter :Integer
+Counter ← 0
+FOR LoopCounter ← 100 TO 200
+    IF LoopCounter MOD 10 = 7 // Checking if last digit is 
+        THEN
+            OUTPUT LoopCounter
+            Counter ← Counter + 1
+    ENDIF
+NEXT LoopCounter
+OUTPUT Counter

@@ -1,0 +1,8 @@
+
+REPEAT
+    CALL AlarmReset()
+    Status1 ← GetStatus(Sys_A)
+    Status2 ← Status(Sys_B)
+UNTIL Status1 = TRUE AND Status2 = TRUE
+
+//Declaring 2d arr

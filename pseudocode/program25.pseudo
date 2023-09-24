@@ -1,0 +1,8 @@
+DECLARE Counter:INTEGER
+
+OPENFILE "student.txt" FOR WRITE
+
+FOR Counter ← 0 TO 99
+    WRITEFILE "student.txt", Name[Counter]
+NEXT Counter
+CLOSEFILE 
